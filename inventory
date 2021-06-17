@@ -1,0 +1,5 @@
+[EC2]
+3.88.54.92
+
+[RDS]
+44.194.9.206 ansible_connection=ssh ansible_ssh_user="inesh" ansible_ssh_pass="ineshadmin"

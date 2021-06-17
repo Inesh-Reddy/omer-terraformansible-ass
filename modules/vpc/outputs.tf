@@ -20,3 +20,13 @@ output "ssh_groupid" {
 output "db_groupid" {
     value = "${aws_security_group.db_connection.id}"
 }
+
+
+
+#############
+output "public_ip" {
+  description = "Contains the public IP address"
+  value       = aws_eip.nat.public_ip
+}
+
+

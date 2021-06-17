@@ -1,0 +1,12 @@
+---
+- name: Run SQL from file on RDS via EC2
+  hosts: EC2
+  tasks:
+    - name: Load the SQL file into SQL commands
+      copy:
+        src: "{{ sql_file }}"
+        dest: "/home/postgres/{{ sql_file }}"
+    - name: Set psql password via env variable
+      shell: "PGPASSWORD={{ pg_pass }}"
+    - name: Run queries from SQL script
+      shell: "psql -h {{ RDS_IP }} -U {{ RDS_USERNAME }} -d {{ RDS_DB }} -f /home/postgres/{{ sql_file }}"

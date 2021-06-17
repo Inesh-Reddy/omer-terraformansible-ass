@@ -7,3 +7,11 @@ variable "private_ids" {
 variable "db_groupid" {
 
 }
+
+#variable "password" {
+ #   value = "admin"
+#}
+
+#variable "username" {
+#    value = "admin"
+#}

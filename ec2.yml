@@ -1,0 +1,11 @@
+---
+- name: Configure EC2 instance
+  hosts: EC2
+  tasks:
+    - name: Install all packages
+      apt:
+        pkg:
+          - postgresql-client
+    - name: check connectivity to RDS hosts
+      ping:
+      delegate_to: RDS[0]
